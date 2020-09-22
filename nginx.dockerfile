@@ -1,7 +1,7 @@
 FROM nginx:stable-alpine
 
 ADD ./nginx/nginx.conf /etc/nginx/nginx.conf
-ADD ./nginx/default.conf /etc/nginx/conf.d/default.conf
+ADD nginx/container-dispatch.conf /etc/nginx/conf.d/container-dispatch.conf
 
 RUN mkdir -p /var/www/html
 

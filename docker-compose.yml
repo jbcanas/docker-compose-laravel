@@ -10,29 +10,11 @@ services:
       dockerfile: nginx.dockerfile
     container_name: nginx
     ports:
-      - "8080:80"
+      - "7001:7001"
     volumes:
       - ./src:/var/www/html:delegated
     depends_on:
       - php
-      - mysql
-    networks:
-      - laravel
-
-  mysql:
-    image: mysql:5.7.29
-    container_name: mysql
-    restart: unless-stopped
-    tty: true
-    ports:
-      - "3306:3306"
-    environment:
-      MYSQL_DATABASE: homestead
-      MYSQL_USER: homestead
-      MYSQL_PASSWORD: secret
-      MYSQL_ROOT_PASSWORD: secret
-      SERVICE_TAGS: dev
-      SERVICE_NAME: mysql
     networks:
       - laravel
 
