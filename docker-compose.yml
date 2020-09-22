@@ -12,7 +12,7 @@ services:
     ports:
       - "7001:7001"
     volumes:
-      - /var/www/container-dispatch:/var/www/container-dispatch:delegated
+      - /var/www:/var/www:delegated
     depends_on:
       - php
     networks:
@@ -24,7 +24,7 @@ services:
       dockerfile: php.dockerfile
     container_name: php
     volumes:
-      - ./src:/var/www/html:delegated
+      - /var/www:/var/www:delegated
     networks:
       - laravel
 
@@ -34,7 +34,7 @@ services:
       dockerfile: composer.dockerfile
     container_name: composer
     volumes:
-      - ./src:/var/www/html
+      - /var/www:/var/www
     working_dir: /var/www/html
     depends_on:
       - php
@@ -47,7 +47,7 @@ services:
     image: node:13.7
     container_name: npm
     volumes:
-      - ./src:/var/www/html
+      - /var/www:/var/www
     working_dir: /var/www/html
     entrypoint: ['npm']
 
@@ -57,7 +57,7 @@ services:
       dockerfile: php.dockerfile
     container_name: artisan
     volumes:
-      - ./src:/var/www/html:delegated
+      - /var/www:/var/www:delegated
     working_dir: /var/www/html
     user: laravel
     entrypoint: ['php', '/var/www/html/artisan']
