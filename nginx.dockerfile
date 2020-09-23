@@ -7,6 +7,7 @@ ADD nginx/payroll.conf /etc/nginx/conf.d/payroll.conf
 ADD nginx/vlr.conf /etc/nginx/conf.d/vlr.conf
 ADD nginx/emra.conf /etc/nginx/conf.d/emra.conf
 ADD nginx/jplds-mech.conf /etc/nginx/conf.d/jplds-mech.conf
+ADD nginx/partsmen.conf /etc/nginx/conf.d/partsmen.conf
 
 RUN mkdir -p /var/www/html
 
