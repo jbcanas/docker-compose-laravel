@@ -5,6 +5,7 @@ networks:
 
 services:
   site:
+    restart: always
     build:
       context: .
       dockerfile: nginx.dockerfile
@@ -23,6 +24,7 @@ services:
       context: .
       dockerfile: php.dockerfile
     container_name: php
+    restart: always
     volumes:
       - /var/www:/var/www:delegated
     networks:
