@@ -11,8 +11,10 @@ RUN apk update \
     unzip \
     curl \
     git \
+  && pecl install mcrypt-1.0.3
   && docker-php-ext-configure bcmath --enable-bcmath \
   && docker-php-ext-configure zip \
+  && docker-php-ext-enable mcrypt \
   && docker-php-ext-install zip mysqli pdo pdo_mysql bcmath opcache
 
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
