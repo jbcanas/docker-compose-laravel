@@ -16,6 +16,7 @@ services:
       - /var/www:/var/www:delegated
     depends_on:
       - php
+      - php73
     networks:
       - laravel
 
