@@ -22,8 +22,6 @@ RUN apk update \
 
 ADD ./php/www.conf /usr/local/etc/php-fpm.d/www.conf
 
-RUN apt-get update
-RUN apt-get install -y zip unzip curl git
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
 RUN php composer-setup.php --install-dir=/usr/bin --filename=composer
 RUN php -r "unlink('composer-setup.php');
