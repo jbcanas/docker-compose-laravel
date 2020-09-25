@@ -8,7 +8,7 @@ RUN apk update \
   && docker-php-ext-configure mcrypt --with-mcrypt \
   && docker-php-ext-configure bcmath --enable-bcmath \
   && docker-php-ext-configure zip \
-  && docker-php-ext-install zip mysqli pdo pdo_mysql bcmath mcrypt gd dom mbstring
+  && docker-php-ext-install zip mysqli pdo pdo_mysql bcmath mcrypt gd mbstring
 
 RUN addgroup -g 1000 laravel && adduser -G laravel -g laravel -s /bin/sh -D laravel
 
