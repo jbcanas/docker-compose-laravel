@@ -11,7 +11,7 @@ RUN apk update \
     unzip \
     curl \
     git \
-  && pecl install mcrypt-1.0.3
+  && pecl install mcrypt-1.0.3 \
   && docker-php-ext-configure bcmath --enable-bcmath \
   && docker-php-ext-configure zip \
   && docker-php-ext-enable mcrypt \
