@@ -30,6 +30,17 @@ services:
     networks:
       - laravel
 
+  php73:
+    build:
+      context: .
+      dockerfile: php7.3.dockerfile
+    container_name: php73
+    restart: always
+    volumes:
+      - /var/www:/var/www:delegated
+    networks:
+      - laravel
+
   composer:
     build:
       context: .
