@@ -24,7 +24,7 @@ ADD ./php/www.conf /usr/local/etc/php-fpm.d/www.conf
 
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
 RUN php composer-setup.php --install-dir=/usr/bin --filename=composer
-RUN php -r "unlink('composer-setup.php');
+RUN php -r "unlink('composer-setup.php');"
 
 RUN addgroup -g 1000 laravel && adduser -G laravel -g laravel -s /bin/sh -D laravel
 
